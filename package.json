@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "build": "bankai build index.js",
+    "build-sass": "node-sass-chokidar sass/base.scss -o ./",
+    "watch-sass": "node-sass-chokidar -w -o ./ sass/base.scss base.css",
     "create": "choo-scaffold",
     "inspect": "bankai inspect index.js",
-    "start": "bankai start index.js",
+    "start-bankai": "bankai start index.js",
+    "start": "npm-run-all -p watch-sass start-bankai",
     "test": "standard && npm run test-deps",
     "test-deps": "dependency-check . && dependency-check . --extra --no-dev -i tachyons"
   },
@@ -21,6 +24,8 @@
     "choo-devtools": "^2.5.0",
     "choo-scaffold": "^1.1.2",
     "dependency-check": "^3.1.0",
+    "node-sass-chokidar": "^1.2.2",
+    "npm-run-all": "^4.1.2",
     "standard": "^11.0.1"
   }
 }

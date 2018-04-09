@@ -1,0 +1,48 @@
+@import "grid-vars";
+/**********************
+  Utility classes
+**********************/
+//Loop Count
+$sizing-count: 99;
+//
+
+@for $i from 0 through $sizing-count {
+  .w-#{$i} {width: #{$i}rem;} // Example: .w-12: 12rem;
+  .h-#{$i} {height: #{$i}rem;} // Example: .h-12: 12rem;
+  .m-#{$i} {margin: #{$i}rem;} // Example: .m-12: 12rem;
+  .mt-#{$i} {margin-top: #{$i}rem;} // Example: .mt-12: 12rem;
+  .mb-#{$i} {margin-bottom: #{$i}rem;} // Example: .mb-12: 12rem;
+  .ml-#{$i} {margin-left: #{$i}rem;} // Example: .ml-12: 12rem;
+  .mr-#{$i} {margin-right: #{$i}rem;} // Example: .mr-12: 12rem;
+  .mv-#{$i} {margin-top: #{$i}rem; margin-bottom: #{$i}rem;}
+  .mh-#{$i} {margin-left: #{$i}rem; margin-right: #{$i}rem;}
+  .p-#{$i} {padding: #{$i}rem;} // Example: .p-12: 12rem;
+  .pt-#{$i} {padding-top: #{$i}rem;} // Example: .pt-12: 12rem;
+  .pb-#{$i} {padding-bottom: #{$i}rem;} // Example: .pb-12: 12rem;
+  .pl-#{$i} {padding-left: #{$i}rem;} // Example: .pl-12: 12rem;
+  .pr-#{$i} {padding-right: #{$i}rem;} // Example: pr-12: 12rem;
+  .pv-#{$i} {padding-top: #{$i}rem; padding-bottom: #{$i}rem;}
+  .ph-#{$i} {padding-left: #{$i}rem; padding-right: #{$i}rem;}
+}
+
+// Responsive Spacing
+@each $bp-name,$bp-value in $breakpoints {
+  @media only screen and (min-width:$bp-value) {
+    @for $i from 0 through $sizing-count {
+    .#{$bp-name}-mt-#{$i} {margin-top: #{$i}rem;} // Example: .mt-12: 12rem;
+    .#{$bp-name}-mb-#{$i} {margin-bottom: #{$i}rem;} // Example: .mb-12: 12rem;
+    .#{$bp-name}-ml-#{$i} {margin-left: #{$i}rem;} // Example: .ml-12: 12rem;
+    .#{$bp-name}-mr-#{$i} {margin-right: #{$i}rem;} // Example: .mr-12: 12rem;
+    .#{$bp-name}-mv-#{$i} {margin-top: #{$i}rem; margin-bottom: #{$i}rem;}
+    .#{$bp-name}-mh-#{$i} {margin-left: #{$i}rem; margin-right: #{$i}rem;}
+    .#{$bp-name}-p-#{$i} {padding: #{$i}rem;} // Example: .p-12: 12rem;
+    .#{$bp-name}-pt-#{$i} {padding-top: #{$i}rem;} // Example: .pt-12: 12rem;
+    .#{$bp-name}-pb-#{$i} {padding-bottom: #{$i}rem;} // Example: .pb-12: 12rem;
+    .#{$bp-name}-pl-#{$i} {padding-left: #{$i}rem;} // Example: .pl-12: 12rem;
+    .#{$bp-name}-pr-#{$i} {padding-right: #{$i}rem;} // Example: pr-12: 12rem;
+    .#{$bp-name}-pv-#{$i} {padding-top: #{$i}rem; padding-bottom: #{$i}rem;}
+    .#{$bp-name}-ph-#{$i} {padding-left: #{$i}rem; padding-right: #{$i}rem;}
+    }
+
+  }
+}

@@ -1,6 +1,6 @@
 var html = require('choo/html')
 
-var TITLE = 'testing - main'
+var TITLE = 'Urbit'
 
 module.exports = view
 
@@ -8,148 +8,58 @@ function view (state, emit) {
   if (state.title !== TITLE) emit(state.events.DOMTITLECHANGE, TITLE)
 
   return html`
-    <body class="code lh-copy">
-      <main class="pa3 cf center">
-        <section class="fl mw6 w-50-m w-third-l pa3">
-          <h2>1.</h2>
-          <p>
-            Welcome to your new Choo application.
-            We're very happy you've made it this far.
-          </p>
+  <body class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <h1 class="text-800 mt-10 mb-10">~</h1>
+      </div>
+    </div>
+    <div class="row align-vertical">
 
-          <p>
-            You're now in control of your own Choo app. The moment you decide to
-            deploy it, it'll work offline and on any device.
-          </p>
-
-          <br>
-        </section>
-
-        <section class="fl mw6 w-50-m w-third-l pa3">
-          <h2>2.</h2>
-
-          <p>
-            We've outfitted your project with a small selection of commands to
-            help you achieve results faster:
-          </p>
-
-          <ul>
-            <li class="mb3">
-              <strong>npm start</strong><br>
-              start your project for local development.
-            </li>
-            <li class="mb3">
-              <strong>npm run build</strong><br>
-              compile your project for production.
-            </li>
-            <li class="mb3">
-              <strong>npm run inspect</strong><br>
-              visualize your project's dependencies.
-            </li>
-            <li class="mb3">
-              <strong>npm run create</strong><br>
-              scaffold a new file.
-            </li>
-          </ul>
-
-          <br>
-        </section>
-
-        <section class="fl mw6 w-50-m w-third-l pa3">
-          <h2>3.</h2>
-
-          <p>
-            Your project also comes with a few directories. These names have
-            special meanings for the build tool, so it's good to know what they
-            do.
-          </p>
-
-          <ul>
-            <li class="mb3">
-              <strong>assets/</strong><br>
-              Static files that can be served up, such as images and fonts.
-            </li>
-            <li class="mb3">
-              <strong>components/</strong><br>
-              Reusable fragments that can be composed into views.
-            </li>
-            <li class="mb3">
-              <strong>stores/</strong><br>
-              Pieces of logic that are shared by multiple components.
-            </li>
-            <li class="mb3">
-              <strong>views/</strong><br>
-              Combinations of components that are mapped to routes.
-            </li>
-          </ul>
-
-          <br>
-        </section>
-
-        <section class="fl mw6 w-50-m w-third-l pa3">
-          <h2>4.</h2>
-
-          <p>
-            So far we've provided you with one base view, <a
-            href="/oh-no">one fallback view</a>, and one store. This serves
-            as an example. A place to start from. It's your project now, so
-            go ahead and delete them once you know how they work.
-          </p>
-
-          <p>Number of clicks stored: ${state.totalClicks}</p>
-
-          <button class="dim ph3 ba bw1 pv2 b--black pointer bg-white"
-            onclick=${handleClick}>
-            Emit a click event
+      <div class="col-sm-10 col-sm-offset-1">
+        <h1 class="mt-0 mb-4">
+          <a href="https://primer.urbit.org">Overview</a>
+            <svg  class="align-middle" xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56">
+              <polygon class="sticker" fill="#4330FC" points="27.935 51.658 24.122 55.739 21.552 50.781 16.779 53.682 15.642 48.214 10.264 49.72 10.645 44.148 5.06 44.147 6.929 38.884 1.551 37.377 4.771 32.813 0 29.911 4.332 26.386 .52 22.303 5.643 20.077 3.074 15.118 8.607 14.357 7.471 8.889 13.004 9.648 13.386 4.076 18.509 6.301 20.38 1.038 24.713 4.562 27.935 0 31.156 4.562 35.489 1.038 37.36 6.301 42.483 4.076 42.865 9.648 48.398 8.889 47.263 14.357 52.796 15.118 50.227 20.077 55.349 22.303 51.538 26.386 55.869 29.911 51.098 32.813 54.318 37.377 48.94 38.884 50.81 44.147 45.225 44.148 45.605 49.72 40.227 48.214 39.09 53.682 34.318 50.781 31.747 55.739"/>
+              <path fill="#FFFFFF" d="M22.2951759,33.1612517 L19.7022062,33.1612517 L16.9191759,28.3147062 L16.240388,26.9571305 L16.2268122,26.9571305 L16.2811153,28.6405244 L16.2811153,33.1612517 L14.2176001,33.1612517 L14.2176001,24.2012517 L16.8105698,24.2012517 L19.5936001,29.0477971 L20.272388,30.4053729 L20.2859637,30.4053729 L20.2316607,28.721979 L20.2316607,24.2012517 L22.2951759,24.2012517 L22.2951759,33.1612517 Z M30.6035395,30.4325244 L25.9742062,30.4325244 C26.0466106,30.8579003 26.2027302,31.1701396 26.4425698,31.3692517 C26.6824094,31.5683638 27.0014365,31.6679183 27.3996607,31.6679183 C27.7345311,31.6679183 28.0083061,31.6045654 28.220994,31.4778577 C28.433682,31.35115 28.576226,31.1656165 28.6486304,30.9212517 L30.522085,31.518585 C30.3320234,32.0978202 29.963219,32.5390279 29.4156607,32.8422214 C28.8681024,33.1454148 28.1961091,33.2970093 27.3996607,33.2970093 C26.2140386,33.2970093 25.3067346,32.9892952 24.6777213,32.3738577 C24.0487081,31.7584203 23.7342062,30.8895805 23.7342062,29.7673123 C23.7342062,28.6450441 24.0419203,27.7762043 24.6573577,27.1607668 C25.2727951,26.5453294 26.1461601,26.2376153 27.2774789,26.2376153 C28.3725955,26.2376153 29.2120214,26.5385416 29.7957819,27.1404032 C30.3795424,27.7422648 30.6714183,28.5862159 30.6714183,29.672282 C30.6714183,29.9800007 30.6487923,30.2334123 30.6035395,30.4325244 Z M26.3882668,28.1789487 C26.1755788,28.3961619 26.03756,28.7310272 25.9742062,29.1835547 L28.5264486,29.1835547 C28.3997409,28.2966008 27.9788966,27.8531305 27.2639031,27.8531305 C26.8928306,27.8531305 26.6009547,27.9617354 26.3882668,28.1789487 Z M43.1339637,26.3733729 L41.0840243,33.1612517 L38.3145698,33.1612517 L37.0927516,28.8034335 L35.8845092,33.1612517 L33.1286304,33.1612517 L31.0651153,26.3733729 L33.4951759,26.3733729 L34.6355395,31.4778577 L35.9659637,26.3733729 L38.246691,26.3733729 L39.5635395,31.5050093 L40.7174789,26.3733729 L43.1339637,26.3733729 Z" transform="rotate(30 28.676 28.75)"/>
+            </svg>
+        </h1>
+      </div>
+      <div class="col-sm-10 col-sm-offset-1">
+        <a href="/blog.html">
+            <h1 class="mt-0 mb-4">Essays</h1>
+        </a>
+        <a href="/blog.html">
+            <h1 class="mt-0 mb-4">Updates</h1>
+        </a>
+        <a href="/media.html">
+          <h1 class="mt-0 mb-4">Media</h1>
+        </a>
+        <a href="/install.html">
+            <h1 class="mt-0 mb-20">Install</h1>
+        </a>
+      </div>
+      <div class="col-sm-10 col-md-8 col-lg-6 col-sm-offset-1 mb-10">
+        <h5 class="mb-4 text-600">Get weekly updates:</h5>
+        <div class="input-group text-mono">
+          <input type="text" placeholder="your@email.com" />
+          <button class="btn btn-primary mt-4" type="submit">
+            <span class="text-600">Subscribe</span>
           </button>
-
-          <br><br>
-        </section>
-
-        <section class="fl mw6 w-50-m w-third-l pa3">
-          <h2>5.</h2>
-
-          <p>
-            To make your development journey more pleasant, we've also
-            included <a
-            href="https://github.com/choojs/choo-devtools">devtools</a>. If
-            you open your browser console, here's a selection of the
-            commands that are at your disposal:
-
-            <ul>
-              <li class="mb3">
-                <strong>choo.state</strong><br>
-                Log the current application state.
-              </li>
-              <li class="mb3">
-                <strong>choo.log</strong><br>
-                Log the last 150 events received by the event bus.
-              </li>
-              <li class="mb3">
-                <strong>choo.emit</strong><br>
-                Emit an event inside the application event bus.
-              </li>
-              <li class="mb3">
-                <strong>choo.help</strong><br>
-                See an overview of all available commands.
-              </li>
-            </ul>
-          </p>
-        </section>
-
-        <section class="fl mw6 w-50-m w-third-l pa3">
-          <h2>6.</h2>
-
-          <p>
-            And that's about it! Thanks for reading. If you have any
-            questions, check out the <a  href="https://choo.io">docs</a> or reach
-            out on <a href="https://github.com/choojs/choo">GitHub</a> or <a
-            href="https://www.irccloud.com/irc/freenode/channel/choo">IRC</a>.
-            We're online everyday, and always around to help. Happy hacking!
-          </p>
-        </section>
-      </main>
-    </body>
+        </div>
+      </div>
+      <div class="col-sm-10 col-sm-offset-1 mb-10">
+        <div class="row">
+          <span class="col-md-12">
+            <a href="https://twitter.com/@urbit">@urbit</a>
+          </span>
+          <span class="col-md-12">
+            <a href="mailto:urbit@urbit.org">urbit@urbit.org</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
   `
 
   function handleClick () {
